@@ -1,6 +1,25 @@
 import * as React from 'react';
 import { StyleSheet, Text, View,  Image, TouchableOpacity, ScrollView } from 'react-native';
 
+
+let items=[{name: "Apple Watch" , description: "Series 6. Red", price :"$ 359,00" },
+            {name: "Apple Watch" , description: "Series 6. Red", price :"$ 359,00" },
+            {name: "Apple Watch" , description: "Series 6. Red", price :"$ 359,00" },
+            {name: "Apple Watch" , description: "Series 6. Red", price :"$ 359,00" }];
+let itemList=[];
+items.forEach((item,index)=>{   
+  itemList.push(
+  <View style={styles.card}>
+    <Image style={styles.image} source={require('../images/apple_watch.png')} />
+    <View style={styles.infoProduct}>
+        <Text style={{fontWeight: 'bolder',  fontSize: 20,}}>item.name</Text>
+        <Text style={{color: '#868686'}}>item.description</Text>
+        <Text style={{fontWeight: 'bolder', color: '#5956E9'}}>item.price</Text>
+    </View>
+</View>)
+})
+
+
 export function Home({ navigation }) {
     return (
         <View style={styles.container}>
@@ -18,33 +37,7 @@ export function Home({ navigation }) {
 
 
             <ScrollView showsVerticalScrollIndicator={false}>
-
-                <View style={styles.card}>
-                    <Image style={styles.apple_watch} source={require('../images/apple_watch.png')} />
-                    <View style={styles.prod_info}>
-                        <Text style={{fontWeight: 'bolder',  fontSize: 20,}}>Apple Watch</Text>
-                        <Text style={{color: '#868686'}}>Series 6. Red</Text>
-                        <Text style={{fontWeight: 'bolder', color: '#5956E9'}}>$ 359</Text>
-                    </View>
-                </View>
-
-                <View style={styles.card}>
-                    <Image style={styles.apple_watch} source={require('../images/apple_watch.png')} />
-                    <View style={styles.infoProduct}>
-                        <Text style={{fontWeight: 'bolder',  fontSize: 20,}}>Apple Watch</Text>
-                        <Text style={{color: '#868686'}}>Series 6. Red</Text>
-                        <Text style={{fontWeight: 'bolder', color: '#5956E9'}}>$ 359</Text>
-                    </View>
-                </View>
-
-                <View style={styles.card}>
-                    <Image style={styles.image} source={require('../images/apple_watch.png')} />
-                    <View style={styles.prod_info}>
-                        <Text style={{fontWeight: 'bolder',  fontSize: 20,}}>Apple Watch</Text>
-                        <Text style={{color: '#868686'}}>Series 6. Red</Text>
-                        <Text style={{fontWeight: 'bolder', color: '#5956E9'}}>$ 359</Text>
-                    </View>
-                </View>
+               {itemList}
             </ScrollView>
 
 

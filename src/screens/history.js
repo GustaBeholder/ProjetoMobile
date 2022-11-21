@@ -27,9 +27,6 @@ export function History({ navigation }) {
                     </Text>
                 </TouchableOpacity>
             </View>
-
-
-
         </View>
     );
 }
